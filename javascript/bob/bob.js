@@ -6,6 +6,8 @@ var Bob = function() {
       return "Woah, chill out!";
     } else if (question(message)) {
       return "Sure.";
+    } else if (silence(message)) {
+      return "Fine. Be that way!";
     } else {
       return "Whatever.";
     }
@@ -17,6 +19,10 @@ var Bob = function() {
 
   function question(message) {
     return (message.slice(-1) === "?");
+  }
+
+  function silence(message) {
+    return (message.trim() === "");
   }
 };
 
